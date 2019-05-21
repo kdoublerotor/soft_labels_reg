@@ -35,6 +35,3 @@ def save_w2vec_classes(dataset='cifar10',
         np.save(file_path, g_model[class_name])
 
     print(f'All w2vec representation of classes from {dataset} saved at {str(target_dir)}')
-
-
-
