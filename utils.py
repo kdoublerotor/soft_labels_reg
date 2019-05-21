@@ -30,7 +30,7 @@ def save_w2vec_classes(dataset='cifar10',
     target_dir.mkdir(parents=True, exist_ok=True)
     g_model = model = gensim.models.KeyedVectors.load_word2vec_format(model_dir,
                                                                       binary=True)
-    for class_name in tqdmlist(CIFAR_IX_TO_CLASS.values()):
+    for class_name in tqdm(CIFAR_IX_TO_CLASS.values()):
         file_path = target_dir.joinpath(f'{class_name}_w2vec')
         np.save(file_path, g_model[class_name])
 
